@@ -1,0 +1,38 @@
+server:
+  port: 8888
+
+
+spring:
+  application:
+    name: nsolm_blog
+  #数据库的配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=UTF-8&serverTimeZone=UTC
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #redis 配置
+  redis:
+    host: localhost
+    port: 6379
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 20MB
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: ms_
+
+qiniu:
+  accessKey: RTAGfwVUSd-atOA6JEzDzUEerSU_NSjlivvuJont
+  accessSecretKey : bpzyjhCoqBGMVgj1i9ZvlMhkO6Ggj_8qbDrsZUYI
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+rocketmq:
+  name-server: 42.192.178.190:9876
+  producer:
+    group: blog_group
